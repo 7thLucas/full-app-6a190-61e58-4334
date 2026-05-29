@@ -6,26 +6,26 @@
 
 @layer base {
   :root {
-    --background: #ffffff;
-    --foreground: #09090b;
-    --card: #ffffff;
-    --card-foreground: #09090b;
-    --popover: #ffffff;
-    --popover-foreground: #09090b;
-    --primary: #2563eb;
-    --primary-foreground: #ffffff;
-    --secondary: #f4f4f5;
-    --secondary-foreground: #18181b;
-    --muted: #f4f4f5;
-    --muted-foreground: #71717a;
-    --accent: #f4f4f5;
-    --accent-foreground: #18181b;
-    --destructive: #ef4444;
-    --destructive-foreground: #fafafa;
-    --border: #e4e4e7;
-    --input: #e4e4e7;
-    --ring: #2563eb;
-    --radius: 0.5rem;
+    --background: #FAFAF7;
+    --foreground: #1F2937;
+    --card: #FFFFFF;
+    --card-foreground: #1F2937;
+    --popover: #FFFFFF;
+    --popover-foreground: #1F2937;
+    --primary: #10B981;
+    --primary-foreground: #FFFFFF;
+    --secondary: #F3F4F6;
+    --secondary-foreground: #1F2937;
+    --muted: #F3F4F6;
+    --muted-foreground: #6B7280;
+    --accent: #60A5FA;
+    --accent-foreground: #FFFFFF;
+    --destructive: #EF4444;
+    --destructive-foreground: #FAFAFA;
+    --border: #E5E7EB;
+    --input: #E5E7EB;
+    --ring: #10B981;
+    --radius: 0.75rem;
     --chart-1: #f97316;
     --chart-2: #0d9488;
     --chart-3: #1e3a5f;
@@ -176,8 +176,33 @@
 }
 
 body {
-  background: #f2f2f7;
+  background: var(--background);
+  color: var(--foreground);
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-feature-settings: "cv11", "ss01";
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.bodycheck-tabnums {
+  font-variant-numeric: tabular-nums;
+  font-feature-settings: "tnum";
+}
+
+/* Calm fade + lift used by the result panel */
+@keyframes bodycheck-rise {
+  from {
+    opacity: 0;
+    transform: translateY(4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.bodycheck-rise {
+  animation: bodycheck-rise 300ms ease-out both;
 }
 
 /* Hide scrollbar for native mobile feel */
